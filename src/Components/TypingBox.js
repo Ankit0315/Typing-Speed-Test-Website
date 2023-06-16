@@ -225,7 +225,10 @@ if(correctCharsInWords.length===allCurrChars.length)
        missedChars={missedChars}
       extraChars={extraChars}
       graphData={graphData}
+      resetTest={resetTest}  
+      //add this new 228 line
       />
+     
      ):(
      <div className='type-box' onClick={focusInput}>
          <div className='words'>

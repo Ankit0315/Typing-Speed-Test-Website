@@ -9,7 +9,9 @@ const Stats=(
     incorrectChars,
     missedChars,
     extraChars,
-    graphData}
+    graphData,
+    resetTest, //added this line latest
+}
  ) =>{
     let timeSet=new Set();
     const newGraph=graphData.filter(i=>{
@@ -94,6 +96,8 @@ const Stats=(
         <div className='subtitle'>{accuracy}</div>
         <div className='title'>Characters</div>
         <div className='subtitle'>{correctChars}/{incorrectChars}/{missedChars}/{extraChars}</div>
+        <div onClick={resetTest} className='restart'>Restart</div> 
+        {/* //added this line latest */}
       </div>
       <div className='right-stats'>
        <Graph graphData={newGraph}/>

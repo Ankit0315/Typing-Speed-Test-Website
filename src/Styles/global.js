@@ -198,4 +198,9 @@ opacity:0;
 .a,.b{
     color:${({theme})=>theme.textColor};
 }
+.restart {
+    font-size: 40px;
+    margin-top: 5px;
+    cursor: pointer;
+}
 `
