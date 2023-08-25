@@ -47,6 +47,7 @@ const redTheme={
     textColor:'#DCDCDC',
     typeBoxText:'DCDCDC	'
  }
+ 
  export const themeOptions=[
     {label:'LightBlue',value:darkTheme},
     {label:'Dark orchid',value:redTheme},

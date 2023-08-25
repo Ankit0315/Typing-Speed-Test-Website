@@ -12,6 +12,8 @@ import errorMapping from '../Utils/errorMapping';
 import LogoutIcon from '@mui/icons-material/Logout';
 import {useAuthState} from 'react-firebase-hooks/auth'
 import { useNavigate } from 'react-router-dom';
+
+
 const AccountCircle = () => {
     const[open,setOpen]=useState(false);
     const[value,setValue]=useState(0);
@@ -96,8 +98,9 @@ const AccountCircle = () => {
       onClose={handleClose}
       style={{display:'flex',
       alignItems:'center',
-    justifyContent:'center'
-   
+    justifyContent:'center',
+    background:'transparent',
+    backdropFilter:'blur(4px)'
     }}
       >
       <div style={{width:'400px',textAlign:'center'}}>

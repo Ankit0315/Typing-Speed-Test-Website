@@ -51,6 +51,53 @@ const LoginForm=({handleClose})=>{
                         });
                 })
         }
+
+            const handleForgetPass=()=>{
+              
+                if (!email) {
+                    toast.warning('Please enter your registered email', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
+                    return;
+                }
+                else{
+                
+               auth.sendPasswordResetEmail(email)
+               .then(() => {
+                    toast.success('Password reset email has been sent', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
+                
+                }).catch((err) => {
+                    toast.error(errorMapping[err.code]|| 'some error occured', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
+                })
+            }
+            }
+            
+        
     return (
       <Box
       p={3}
@@ -91,6 +138,9 @@ const LoginForm=({handleClose})=>{
             }
          }}
          />
+    {/* <div style={{cursor:"pointer",textDecorationLine:"underline",textAlign:"right",width:"20px",marginLeft:"234px",fontSize:"14px"}} onClick={handleForgetPass}>Forgot password?</div> */}
+{/* { Increase the width to fit the text */}
+    <div style={{cursor:"pointer", textDecorationLine:"underline",textAlign:"right",width:"120px",marginLeft:"234px",fontSize:"14px"}} onClick={handleForgetPass}>Forgot password?</div>
         <Button
         variant='contained'
         size='large' style={{backgroundColor:theme.textColor,color:theme.backgroundColor }} onClick={handleSubmit}>LOGIN</Button>

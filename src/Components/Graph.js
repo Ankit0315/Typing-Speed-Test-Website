@@ -22,7 +22,27 @@ ChartJS.register(
     Legend
 )
 const Graph = ({graphData}) => {
+
+
     const {theme}=useTheme();
+
+    // const options = {
+    //     scales: {
+    //       x: {
+    //         title: {
+    //           display: true,
+    //           text: 'Time',
+    //         },
+    //       },
+    //       y: {
+    //         title: {
+    //           display: true,
+    //           text: 'Words per min',
+    //         },
+    //       },
+    //     },
+    //   };
+    
   return (
     <div>
       <Line 
@@ -37,8 +57,11 @@ const Graph = ({graphData}) => {
                                     },
                                     
                                 ]
-                    }
-                   } />
+                    }} 
+                    // options={
+                    //     options
+                    // }
+                    />
     </div>
   )
 }
